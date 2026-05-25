@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Elevare Finance OS — Built for Canadian CCPCs</title>
+<meta name="description" content="Cash flow forecasting, CCPC tax optimisation, 529 government grants, and multi-company planning. All connected. All Canadian.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0a1929;--mid:#1A3A5C;--teal:#0E8A7D;--teal2:#12B3A3;
+  --amber:#D97706;--white:#fff;--slate:#64748B;
+  --border:rgba(255,255,255,.08);--bt:rgba(14,138,125,.2);
+  --sans:'DM Sans',sans-serif;--mono:'DM Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-size:15px;line-height:1.6;background:var(--navy);color:var(--white);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1060px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem)}
+.page{display:none}.page.on{display:block}
+/* NAV */
+nav{position:fixed;inset:0 0 auto;z-index:99;height:52px;display:flex;align-items:center;background:rgba(10,25,41,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav-in{width:100%;max-width:1060px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem);display:flex;align-items:center;gap:1.5rem}
+.logo{display:flex;align-items:center;gap:.45rem;font-size:.9rem;font-weight:600;letter-spacing:-.01em;flex-shrink:0}
+.lbox{width:26px;height:26px;background:var(--teal);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700}
+.nlinks{display:flex;gap:1.5rem;margin-left:auto}
+.nlinks a{font-size:.82rem;color:rgba(255,255,255,.5);transition:color .15s}
+.nlinks a:hover{color:var(--white)}
+.nbtns{display:flex;gap:.55rem;margin-left:1rem}
+.btn{display:inline-flex;align-items:center;gap:.35rem;padding:.42rem .95rem;border-radius:7px;font-family:var(--sans);font-size:.82rem;font-weight:500;border:none;cursor:pointer;transition:all .15s;white-space:nowrap}
+.bg{background:transparent;color:rgba(255,255,255,.55);border:1px solid var(--border)}
+.bg:hover{border-color:var(--bt);color:var(--white)}
+.bt{background:var(--teal);color:var(--white)}
+.bt:hover{background:var(--teal2)}
+/* HERO */
+.hero{padding:88px clamp(1rem,4vw,2.5rem) 56px;max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 320px;gap:3rem;align-items:center}
+.htag{display:inline-flex;align-items:center;gap:.4rem;padding:.22rem .7rem;margin-bottom:1.1rem;background:rgba(14,138,125,.1);border:1px solid var(--bt);border-radius:99px;font-size:.72rem;font-weight:500;color:var(--teal2);font-family:var(--mono)}
+.htag i{width:5px;height:5px;border-radius:50%;background:var(--teal2);animation:blink 2s infinite;font-style:normal;display:inline-block}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+h1{font-size:clamp(1.65rem,3.2vw,2.4rem);font-weight:700;line-height:1.1;letter-spacing:-.025em;margin-bottom:.9rem}
+.ac{background:linear-gradient(90deg,var(--teal2),#7fffd4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hsub{font-size:.92rem;color:rgba(255,255,255,.55);line-height:1.7;max-width:460px;margin-bottom:1.6rem}
+.hact{display:flex;gap:.65rem;flex-wrap:wrap;margin-bottom:1.75rem}
+.hbtn{padding:.56rem 1.3rem;font-size:.88rem;border-radius:8px}
+.htrust{display:flex;flex-wrap:wrap;gap:.75rem;padding-top:1.4rem;border-top:1px solid var(--border)}
+.ti{font-size:.72rem;color:rgba(255,255,255,.35);display:flex;align-items:center;gap:.3rem}
+.ti::before{content:'✓';color:var(--teal2);font-size:.65rem}
+/* CARD */
+.hcard{background:var(--mid);border:1px solid var(--border);border-radius:11px;overflow:hidden;box-shadow:0 18px 46px rgba(0,0,0,.3)}
+.cbar{padding:.45rem .8rem;background:rgba(10,25,41,.7);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.35rem}
+.dot{width:8px;height:8px;border-radius:50%}
+.curl{flex:1;margin-left:.35rem;padding:.12rem .55rem;background:rgba(255,255,255,.04);border-radius:4px;font-size:.67rem;color:rgba(255,255,255,.28);font-family:var(--mono)}
+.cbody{padding:.9rem}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:.45rem;margin-bottom:.45rem}
+.st{background:rgba(10,25,41,.7);border:1px solid var(--border);border-radius:7px;padding:.6rem .7rem}
+.sn{font-size:1.05rem;font-weight:700;color:var(--teal2);font-family:var(--mono);margin-bottom:.12rem}
+.sl{font-size:.65rem;color:rgba(255,255,255,.38);line-height:1.3}
+.arow{background:rgba(14,138,125,.07);border:1px solid var(--bt);border-radius:7px;padding:.55rem .7rem;font-size:.72rem;line-height:1.5;display:flex;gap:.45rem}
+/* SECTIONS */
+hr{border:none;border-top:1px solid var(--border)}
+.sec{padding:clamp(2.25rem,5.5vw,4rem) 0}
+.slbl{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--teal2);display:flex;align-items:center;gap:.45rem;margin-bottom:.65rem}
+.slbl::before{content:'';width:16px;height:1px;background:var(--teal2)}
+h2{font-size:clamp(1.25rem,2.6vw,1.75rem);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin-bottom:.65rem}
+.ssub{font-size:.88rem;color:rgba(255,255,255,.45);max-width:480px;line-height:1.7}
+/* STATS */
+.sbar{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);border-radius:11px;overflow:hidden}
+.si{padding:1.35rem 1.2rem;border-right:1px solid var(--border);transition:background .2s}
+.si:last-child{border-right:none}
+.si:hover{background:rgba(14,138,125,.04)}
+.siv{font-size:1.45rem;font-weight:700;font-family:var(--mono);background:linear-gradient(90deg,var(--teal2),#7fffd4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.25rem;line-height:1}
+.sil{font-size:.76rem;color:rgba(255,255,255,.45);line-height:1.4}
+.sis{font-size:.67rem;color:rgba(255,255,255,.22);margin-top:.15rem;font-family:var(--mono)}
+/* MODULES */
+.mgrid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border);border-radius:11px;overflow:hidden;margin-top:1.75rem}
+.mod{padding:1.35rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:background .2s;position:relative}
+.mod:hover{background:rgba(14,138,125,.04)}
+.mod:nth-child(3n){border-right:none}
+.mod:nth-last-child(-n+3){border-bottom:none}
+.mfull{grid-column:1/-1;border-right:none;background:linear-gradient(135deg,rgba(14,138,125,.06),rgba(83,74,183,.04));border-bottom:1px solid var(--border)!important}
+.mic{width:32px;height:32px;border-radius:7px;background:rgba(14,138,125,.1);border:1px solid var(--bt);display:flex;align-items:center;justify-content:center;font-size:.95rem;margin-bottom:.8rem}
+.mtag{font-family:var(--mono);font-size:.63rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(14,138,125,.65);margin-bottom:.28rem}
+.mtitle{font-size:.88rem;font-weight:600;margin-bottom:.35rem;letter-spacing:-.01em;line-height:1.3}
+.mdesc{font-size:.77rem;color:rgba(255,255,255,.42);line-height:1.6;margin-bottom:.65rem}
+.pills{display:flex;flex-wrap:wrap;gap:.28rem}
+.pill{font-size:.65rem;padding:.16rem .52rem;border-radius:99px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);color:rgba(255,255,255,.35);font-family:var(--mono)}
+/* STEPS */
+.steps{margin-top:1.75rem}
+.step{display:grid;grid-template-columns:38px 1fr;gap:.9rem;padding:1.1rem 0;border-bottom:1px solid var(--border);align-items:start}
+.step:last-child{border-bottom:none}
+.stn{font-family:var(--mono);font-size:.95rem;font-weight:500;color:rgba(14,138,125,.3);line-height:1.5}
+.sttitle{font-size:.88rem;font-weight:600;margin-bottom:.28rem;letter-spacing:-.01em}
+.stdesc{font-size:.78rem;color:rgba(255,255,255,.42);line-height:1.65}
+.sttag{display:inline-block;margin-top:.45rem;font-size:.65rem;padding:.16rem .55rem;border-radius:99px;background:rgba(14,138,125,.08);border:1px solid var(--bt);color:var(--teal2);font-family:var(--mono)}
+/* PRICING */
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem;margin-top:1.75rem}
+.plan{background:var(--mid);border:1px solid var(--border);border-radius:10px;padding:1.3rem;transition:border-color .2s}
+.plan:hover{border-color:var(--bt)}
+.pfeat{border-color:var(--bt);background:rgba(14,138,125,.06);position:relative}
+.pbadge{position:absolute;top:0;right:1.1rem;font-size:.62rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--teal2);color:#0a1929;padding:.13rem .55rem;border-radius:0 0 6px 6px;font-family:var(--mono)}
+.ptier{font-family:var(--mono);font-size:.65rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.65rem}
+.pprice{font-size:1.65rem;font-weight:700;font-family:var(--mono);letter-spacing:-.02em;margin-bottom:.08rem}
+.pper{font-size:.72rem;color:rgba(255,255,255,.3);margin-bottom:.8rem}
+.ptarget{font-size:.75rem;color:rgba(255,255,255,.45);padding:.4rem .6rem;background:rgba(255,255,255,.04);border-radius:5px;margin-bottom:1rem;line-height:1.5}
+.pfeat-list{list-style:none;margin-bottom:1.1rem;display:flex;flex-direction:column;gap:.4rem}
+.pfeat-list li{font-size:.75rem;color:rgba(255,255,255,.5);display:flex;align-items:flex-start;gap:.35rem}
+.pfeat-list li::before{content:'✓';color:var(--teal2);font-weight:600;flex-shrink:0}
+.pcta{width:100%;padding:.55rem;border-radius:6px;font-family:var(--sans);font-size:.8rem;font-weight:500;background:rgba(255,255,255,.06);color:rgba(255,255,255,.65);border:1px solid var(--border);cursor:pointer;transition:all .15s}
+.pfeat .pcta{background:var(--teal);color:var(--white);border-color:transparent}
+.pcta:hover{transform:translateY(-1px)}
+.pfeat .pcta:hover{background:var(--teal2)}
+/* MOAT */
+.moat{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin-top:1.75rem}
+.mi{padding:1.35rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:background .2s}
+.mi:hover{background:rgba(14,138,125,.04)}
+.mi:nth-child(2n){border-right:none}
+.mi:nth-last-child(-n+2){border-bottom:none}
+.mn{font-family:var(--mono);font-size:.65rem;color:rgba(14,138,125,.38);letter-spacing:.07em;margin-bottom:.45rem}
+.mtit{font-size:.88rem;font-weight:600;margin-bottom:.35rem;letter-spacing:-.01em}
+.mdsc{font-size:.76rem;color:rgba(255,255,255,.42);line-height:1.65}
+.mbdg{display:inline-block;margin-top:.55rem;font-size:.65rem;padding:.17rem .55rem;border-radius:99px;background:rgba(14,138,125,.07);color:rgba(14,138,125,.65);border:1px solid rgba(14,138,125,.14);font-family:var(--mono)}
+/* DEMO */
+.dsec{background:rgba(14,138,125,.025);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.dwrap{max-width:620px;margin:0 auto;text-align:center;padding:clamp(2.25rem,5.5vw,4rem) clamp(1rem,4vw,2.5rem)}
+.dlive{display:inline-flex;align-items:center;gap:.35rem;padding:.22rem .7rem;margin-bottom:.9rem;background:rgba(14,138,125,.09);border:1px solid var(--bt);border-radius:99px;font-size:.7rem;color:var(--teal2);font-family:var(--mono)}
+.dlive::before{content:'●';font-size:.48rem;animation:blink 2s infinite}
+.dcard{background:var(--mid);border:1px solid var(--border);border-radius:11px;overflow:hidden;margin-top:1.6rem;text-align:left}
+.dbar{padding:.45rem .8rem;background:rgba(10,25,41,.7);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.35rem}
+.durl{flex:1;margin-left:.35rem;padding:.12rem .52rem;background:rgba(255,255,255,.04);border-radius:4px;font-size:.67rem;color:rgba(255,255,255,.28);font-family:var(--mono)}
+.dfeat{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border)}
+.df{padding:.9rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:background .2s}
+.df:hover{background:rgba(14,138,125,.05)}
+.df:nth-child(3n){border-right:none}
+.df:nth-last-child(-n+3){border-bottom:none}
+.dfi{font-size:.85rem;margin-bottom:.25rem}
+.dft{font-size:.75rem;font-weight:600;color:rgba(255,255,255,.75);margin-bottom:.1rem}
+.dfd{font-size:.67rem;color:rgba(255,255,255,.32)}
+.dcta{padding:1.1rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.65rem}
+.dctxt{font-size:.77rem;color:rgba(255,255,255,.35)}
+/* WAITLIST */
+.wlwrap{max-width:520px;margin:0 auto;text-align:center;padding:clamp(2.25rem,5.5vw,4rem) clamp(1rem,4vw,2.5rem)}
+.wlbdg{display:inline-flex;align-items:center;gap:.35rem;padding:.22rem .8rem;margin-bottom:.9rem;background:rgba(14,138,125,.07);border:1px solid var(--bt);border-radius:99px;font-size:.72rem;color:var(--teal2);font-family:var(--mono)}
+.wlf{display:flex;gap:.55rem;max-width:420px;margin:1.4rem auto 0;flex-wrap:wrap}
+.wlinput{flex:1;min-width:170px;background:rgba(10,25,41,.8);border:1px solid var(--bt);border-radius:7px;padding:.56rem .9rem;font-size:.85rem;color:var(--white);font-family:var(--sans);outline:none;transition:border-color .2s}
+.wlinput::placeholder{color:rgba(255,255,255,.22)}
+.wlinput:focus{border-color:var(--teal2)}
+.wlnote{font-size:.7rem;color:rgba(255,255,255,.22);margin-top:.8rem;font-family:var(--mono)}
+/* NEEDS */
+.needs{background:rgba(217,119,6,.06);border:1.5px dashed rgba(217,119,6,.3);border-radius:7px;padding:.8rem 1rem;margin:.4rem 0}
+.ntag{font-family:var(--mono);font-size:.65rem;font-weight:500;color:#D97706;letter-spacing:.07em;text-transform:uppercase;margin-bottom:.22rem}
+.needs p{font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.55}
+/* COMPARE */
+.ctable{width:100%;border-collapse:collapse;font-size:.78rem;margin-top:1.75rem;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.ctable th{background:rgba(10,25,41,.8);padding:.65rem .9rem;font-weight:500;text-align:left;color:rgba(255,255,255,.35);font-family:var(--mono);font-size:.67rem;letter-spacing:.05em}
+.ctable th:nth-child(2){color:var(--teal2);background:rgba(14,138,125,.05)}
+.ctable td{padding:.6rem .9rem;border-top:1px solid var(--border);vertical-align:middle}
+.ctable tr:nth-child(even) td{background:rgba(255,255,255,.01)}
+.ctable td:nth-child(2){background:rgba(14,138,125,.03);font-weight:500}
+.y{color:var(--teal2)}.n{color:rgba(255,255,255,.18)}.pa{color:#D97706}
+/* ABOUT */
+.agrid{display:grid;grid-template-columns:190px 1fr;gap:2.5rem;align-items:start;margin-top:1.75rem}
+.aphoto{aspect-ratio:1;border-radius:11px;background:linear-gradient(135deg,rgba(14,138,125,.1),rgba(26,58,92,.8));border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem}
+.ainit{font-size:2.2rem;font-weight:700;color:rgba(14,138,125,.28)}
+.anote{font-size:.65rem;color:rgba(255,255,255,.18);font-family:var(--mono);text-align:center;padding:.4rem}
+.infotbl{margin-top:1.25rem;border:1px solid var(--border);border-radius:9px;overflow:hidden}
+.irow{display:flex;justify-content:space-between;align-items:center;padding:.55rem .9rem;border-bottom:1px solid var(--border);font-size:.78rem}
+.irow:last-child{border-bottom:none}
+.ilbl{color:rgba(255,255,255,.32)}
+.ival{color:var(--white);font-weight:500}
+.ival.t{color:var(--teal2)}
+/* FOOTER */
+footer{padding:2rem clamp(1rem,4vw,2.5rem);border-top:1px solid var(--border)}
+.fin{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.25rem}
+.fbrand p{font-size:.75rem;color:rgba(255,255,255,.28);line-height:1.65;margin-top:.55rem;max-width:230px}
+.fct{font-family:var(--mono);font-size:.65rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:.8rem}
+.flinks{display:flex;flex-direction:column;gap:.45rem}
+.flinks a{font-size:.78rem;color:rgba(255,255,255,.32);transition:color .15s}
+.flinks a:hover{color:var(--teal2)}
+.fbot{max-width:1060px;margin:1.25rem auto 0;padding-top:1.1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.65rem}
+.flegal{font-size:.68rem;color:rgba(255,255,255,.18);font-family:var(--mono)}
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;gap:1.75rem}
+  .hcard{display:none}
+  .mgrid{grid-template-columns:1fr 1fr}
+  .mod:nth-child(3n){border-right:1px solid var(--border)}
+  .mod:nth-child(2n){border-right:none}
+  .pgrid{grid-template-columns:1fr 1fr}
+  .fin{grid-template-columns:1fr 1fr}
+  .agrid{grid-template-columns:1fr}
+  .aphoto{display:none}
+}
+@media(max-width:580px){
+  .nlinks{display:none}
+  .mgrid,.moat{grid-template-columns:1fr}
+  .mod:nth-child(n){border-right:none}
+  .mi:nth-child(n){border-right:none}
+  .pgrid{grid-template-columns:1fr}
+  .sbar{grid-template-columns:1fr 1fr}
+  .dfeat{grid-template-columns:1fr 1fr}
+  .fin{grid-template-columns:1fr}
+}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.fade>*{animation:up .45s ease both}
+.fade>*:nth-child(1){animation-delay:.06s}
+.fade>*:nth-child(2){animation-delay:.13s}
+.fade>*:nth-child(3){animation-delay:.19s}
+.fade>*:nth-child(4){animation-delay:.25s}
+.fade>*:nth-child(5){animation-delay:.31s}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="logo" href="#" onclick="go('home')"><div class="lbox">E</div>Elevare Finance OS</a>
+    <div class="nlinks">
+      <a href="#" onclick="go('features')">Features</a>
+      <a href="#" onclick="go('pricing')">Pricing</a>
+      <a href="#" onclick="go('about')">About</a>
+      <a href="https://demo.elevarefinanceos.ca" target="_blank">Demo</a>
+    </div>
+    <div class="nbtns">
+      <a class="btn bg" href="https://demo.elevarefinanceos.ca" target="_blank">▶ Try demo</a>
+      <button class="btn bt" onclick="go('waitlist')">Join waitlist</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div id="page-home" class="page on">
+
+<section style="background:linear-gradient(180deg,rgba(14,138,125,.055) 0%,transparent 55%)">
+<div class="hero fade">
+  <div>
+    <div class="htag"><i></i> Private beta · Canadian CCPCs</div>
+    <h1>The financial OS<br><span class="ac">built for Canada.</span></h1>
+    <p class="hsub">Cash flow forecasting. CCPC tax optimisation. 529 government grants. Multi-company SBD planning. All connected, all Canadian.</p>
+    <div class="hact">
+      <a class="btn bt hbtn" href="https://demo.elevarefinanceos.ca" target="_blank">▶ See it live</a>
+      <button class="btn bg hbtn" onclick="go('waitlist')">Join waitlist →</button>
+    </div>
+    <div class="htrust">
+      <span class="ti">AWS Canada hosting</span>
+      <span class="ti">PIPEDA compliant</span>
+      <span class="ti">CRA OAuth certified</span>
+      <span class="ti">BC CCPC</span>
+    </div>
+  </div>
+  <div class="hcard">
+    <div class="cbar">
+      <div class="dot" style="background:#ff5f57"></div>
+      <div class="dot" style="background:#febc2e"></div>
+      <div class="dot" style="background:#28c840"></div>
+      <div class="curl">demo.elevarefinanceos.ca</div>
+    </div>
+    <div class="cbody">
+      <div class="sg">
+        <div class="st"><div class="sn">$64K</div><div class="sl">Verified savings this year</div></div>
+        <div class="st"><div class="sn">$412K</div><div class="sl">Funding in progress</div></div>
+        <div class="st"><div class="sn">91%</div><div class="sl">Forecast accuracy</div></div>
+        <div class="st"><div class="sn">78/100</div><div class="sl">Data completeness</div></div>
+      </div>
+      <div class="arow">
+        <span style="color:var(--teal2);flex-shrink:0">⚡</span>
+        <span style="color:rgba(255,255,255,.6)"><strong style="color:var(--teal2)">Urgent:</strong> CanExport closes May 29 — 16 days remaining</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<hr>
+
+<section class="sec"><div class="wrap">
+  <div class="sbar">
+    <div class="si"><div class="siv">$28,100</div><div class="sil">Avg annual savings per client</div><div class="sis">tax + grants + cash</div></div>
+    <div class="si"><div class="siv">529</div><div class="sil">Grant programs matched to profile</div><div class="sis">federal + provincial</div></div>
+    <div class="si"><div class="siv">71%</div><div class="sil">Grant approval rate on platform</div><div class="sis">vs 30–40% avg</div></div>
+    <div class="si"><div class="siv">6</div><div class="sil">Live CRA data streams</div><div class="sis">installments · GST · T4</div></div>
+  </div>
+</div></section>
+
+<hr>
+
+<section class="sec"><div class="wrap">
+  <div class="slbl">Seven integrated modules</div>
+  <h2>Not another accounting app.<br><span class="ac">A financial operating system.</span></h2>
+  <p class="ssub">Every module shares data with every other. Cash forecast knows about tax installments. Grant matches know about R&D spend.</p>
+  <div class="mgrid">
+    <div class="mod mfull">
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:1.1rem;align-items:center">
+        <div class="mic">◎</div>
+        <div>
+          <div class="mtag">Intelligence OS · New</div>
+          <div class="mtitle" style="font-size:.95rem">The financial memory that gets harder to leave every month</div>
+          <div class="mdesc" style="max-width:620px">Every tax decision, grant application, and cash crisis avoided is logged with context, advisor notes, and verified outcome. After 24 months this is your CCPC's complete financial audit trail — CRA defence, banker briefings, grant history.</div>
+          <div class="pills"><span class="pill">Decision Log</span><span class="pill">Outcomes Dashboard</span><span class="pill">Regulatory Calendar</span><span class="pill">CRA File</span><span class="pill">Network Intel</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="mod"><div class="mic">◈</div><div class="mtag">CashFlow Pilot</div><div class="mtitle">30/60/90-day forecast</div><div class="mdesc">Real-time Plaid feeds. Prophet engine. Crisis alerts before payroll is at risk.</div><div class="pills"><span class="pill">Plaid Canada</span><span class="pill">Scenarios</span></div></div>
+    <div class="mod"><div class="mic">◉</div><div class="mtag">TaxReady</div><div class="mtitle">Protect the SBD</div><div class="mdesc">SBD monitor. Salary/dividend optimizer at 2026 BC rates. Passive income clawback detection.</div><div class="pills"><span class="pill">SBD monitor</span><span class="pill">CRA OAuth</span></div></div>
+    <div class="mod"><div class="mic">🏛️</div><div class="mtag">GrantsReady</div><div class="mtitle">$15B in funding</div><div class="mdesc">529 programs matched to your live profile. Real approval rates from platform data.</div><div class="pills"><span class="pill">IRAP</span><span class="pill">SR&ED</span><span class="pill">CSBFP</span></div></div>
+    <div class="mod"><div class="mic">◎</div><div class="mtag">InvoiceVault</div><div class="mtitle">GST/HST on autopilot</div><div class="mdesc">All 13 provinces. AI receipt OCR. ITC tracker. QBO/Xero sync.</div><div class="pills"><span class="pill">13 provinces</span><span class="pill">AI OCR</span></div></div>
+    <div class="mod"><div class="mic">🏢</div><div class="mtag">MultiCo</div><div class="mtitle">Multi-entity SBD</div><div class="mdesc">T2SCH23A allocation. The only Canadian platform for associated corporation complexity.</div><div class="pills"><span class="pill">T2SCH23A</span><span class="pill">HoldCo</span></div></div>
+    <div class="mod"><div class="mic">◎</div><div class="mtag">DataGaps</div><div class="mtitle">Cost of missing data</div><div class="mdesc">Completeness score. ROI calculator. Action plan to the fixing integration.</div><div class="pills"><span class="pill">Score</span><span class="pill">ROI calc</span></div></div>
+  </div>
+</div></section>
+
+<hr>
+
+<section class="sec" style="background:rgba(26,58,92,.12)"><div class="wrap">
+  <div class="slbl">How it works</div>
+  <h2>From onboarding to <span class="ac">verified outcomes</span> in 30 days</h2>
+  <div class="steps">
+    <div class="step"><div class="stn">01</div><div><div class="sttitle">Connect your data sources</div><div class="stdesc">Bank accounts via Plaid. QuickBooks or Xero. CRA My Business Account. Payroll. Each connection improves recommendation accuracy.</div><span class="sttag">15 min per source</span></div></div>
+    <div class="step"><div class="stn">02</div><div><div class="sttitle">The platform learns your CCPC</div><div class="stdesc">Elevare builds your Living Profile — versioned, auto-updating, preserved for CRA audit. Accountant, bank, and you always see the same picture.</div><span class="sttag">Automatic · no manual entry</span></div></div>
+    <div class="step"><div class="stn">03</div><div><div class="sttitle">Act on intelligent recommendations</div><div class="stdesc">Logged in the Decision Log with context and action required. Verified savings recorded when implemented. Irreplaceable after 24 months.</div><span class="sttag">Avg $28,100 verified / year</span></div></div>
+    <div class="step"><div class="stn">04</div><div><div class="sttitle">Get smarter every month</div><div class="stdesc">Cross-client network intelligence benchmarks against similar CCPCs. Grant approval rates. Salary patterns. A data asset no competitor can replicate.</div><span class="sttag">Proprietary · compounds with scale</span></div></div>
+  </div>
+</div></section>
+
+<hr>
+
+<section class="sec"><div class="wrap">
+  <div class="slbl">Why competitors can't catch up</div>
+  <h2>Five structural advantages that <span class="ac">compound over time</span></h2>
+  <div class="moat">
+    <div class="mi"><div class="mn">01 · REGULATORY DEPTH</div><div class="mtit">The only platform that knows what the SBD is</div><div class="mdsc">Every competitor is US, UK, NZ, or AU. None understand SBD, T2SCH23A, CDBA, or passive income clawback. Elevare was built from 3 years of CCPC advisory practice.</div><span class="mbdg">2–3 years to replicate</span></div>
+    <div class="mi"><div class="mn">02 · CRA CERTIFICATION</div><div class="mtit">A certified barrier no US company will cross</div><div class="mdsc">CRA My Business Account OAuth requires formal developer registration and annual recertification. Anthropic, QuickBooks US, and Xero NZ have no incentive to pursue it.</div><span class="mbdg">Regulatory barrier</span></div>
+    <div class="mi"><div class="mn">03 · DECISION LOG</div><div class="mtit">24 months of memory no export can transfer</div><div class="mdsc">CRA audit trail, banker briefing, grant history, advisor notes — all in one place. After 24 months, switching platforms means starting from zero.</div><span class="mbdg">Accumulated proprietary data</span></div>
+    <div class="mi"><div class="mn">04 · NETWORK INTELLIGENCE</div><div class="mtit">Benchmarks that need 500 clients to matter</div><div class="mdsc">Real grant approval rates and salary patterns from actual client outcomes. At 2,500 clients this becomes the most comprehensive view of Canadian CCPC financial health in existence.</div><span class="mbdg">Network effects · requires scale</span></div>
+  </div>
+</div></section>
+
+<hr>
+
+<section class="dsec"><div class="dwrap">
+  <div class="dlive">Live interactive prototype</div>
+  <div class="slbl" style="justify-content:center">See it working right now</div>
+  <h2 style="text-align:center">Not a mockup.<br><span class="ac">A fully functional demo.</span></h2>
+  <p style="font-size:.82rem;color:rgba(255,255,255,.4);margin-top:.4rem">6,749 lines · all 7 modules · 2026 Canadian tax rates · Pinnacle Construction BC scenario</p>
+  <div class="dcard">
+    <div class="dbar">
+      <div class="dot" style="background:#ff5f57"></div>
+      <div class="dot" style="background:#febc2e"></div>
+      <div class="dot" style="background:#28c840"></div>
+      <div class="durl">🔒 demo.elevarefinanceos.ca</div>
+    </div>
+    <div class="dfeat">
+      <div class="df"><div class="dfi">◈</div><div class="dft">CashFlow Pilot</div><div class="dfd">90-day forecast</div></div>
+      <div class="df"><div class="dfi">◉</div><div class="dft">TaxReady</div><div class="dfd">SBD + optimizer</div></div>
+      <div class="df"><div class="dfi">🏛️</div><div class="dft">GrantsReady</div><div class="dfd">$412K matched</div></div>
+      <div class="df"><div class="dfi">◎</div><div class="dft">Intelligence OS</div><div class="dfd">Decision Log</div></div>
+      <div class="df"><div class="dfi">🏢</div><div class="dft">MultiCo</div><div class="dfd">2-entity SBD</div></div>
+      <div class="df"><div class="dfi">◎</div><div class="dft">ProfitPilot</div><div class="dfd">Margin analysis</div></div>
+    </div>
+    <div class="dcta">
+      <span class="dctxt">Fully interactive · live calculations · 2026 Canadian rates</span>
+      <a class="btn bt" href="https://demo.elevarefinanceos.ca" target="_blank">Open demo →</a>
+    </div>
+  </div>
+</div></section>
+
+<hr>
+
+<section class="sec"><div class="wrap">
+  <div class="wlwrap" style="padding:0">
+    <div class="wlbdg">🇨🇦 Private beta · 6 months free</div>
+    <div class="slbl" style="justify-content:center">Join the waitlist</div>
+    <h2 style="text-align:center">Shape what <span class="ac">we build next.</span></h2>
+    <p style="font-size:.85rem;color:rgba(255,255,255,.4);margin-top:.4rem;line-height:1.65">Small cohort of BC-based CCPCs. Free access for 6 months. Your feedback drives the roadmap.</p>
+    <div class="wlf">
+      <input class="wlinput" type="email" placeholder="your@business.ca" id="hero-email">
+      <button class="btn bt" style="padding:.56rem 1.1rem" onclick="sub()">Get early access →</button>
+    </div>
+    <p class="wlnote">No credit card. No commitment. Canadian data only.</p>
+  </div>
+</div></section>
+
+</div><!-- /home -->
+
+<!-- FEATURES -->
+<div id="page-features" class="page">
+<section class="sec" style="padding-top:5rem"><div class="wrap">
+  <div class="slbl">Platform features</div>
+  <h2>Everything a Canadian CCPC <span class="ac">actually needs.</span></h2>
+  <p class="ssub">Screenshots from the live prototype — every screen is fully functional today.</p>
+</div></section><hr>
+<section class="sec"><div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:2.25rem;align-items:start">
+  <div>
+    <div class="mtag">Intelligence OS</div>
+    <h2 style="font-size:1.25rem">The financial memory no competitor has</h2>
+    <p style="font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.7;margin:.65rem 0 .9rem">After 24 months your Decision Log is an irreplaceable CRA audit trail, banker briefing, and advisory history. Moving platforms means starting from zero.</p>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:.38rem">
+      <li style="font-size:.78rem;color:rgba(255,255,255,.5);display:flex;gap:.38rem"><span style="color:var(--teal2);flex-shrink:0">✓</span> Decision Log — filter by module, tax, grants</li>
+      <li style="font-size:.78rem;color:rgba(255,255,255,.5);display:flex;gap:.38rem"><span style="color:var(--teal2);flex-shrink:0">✓</span> Outcomes Dashboard — verified savings per module</li>
+      <li style="font-size:.78rem;color:rgba(255,255,255,.5);display:flex;gap:.38rem"><span style="color:var(--teal2);flex-shrink:0">✓</span> Regulatory Calendar — personalised CRA deadlines</li>
+      <li style="font-size:.78rem;color:rgba(255,255,255,.5);display:flex;gap:.38rem"><span style="color:var(--teal2);flex-shrink:0">✓</span> CRA File — accounts, filings, RDTOH, CDA</li>
+      <li style="font-size:.78rem;color:rgba(255,255,255,.5);display:flex;gap:.38rem"><span style="color:var(--teal2);flex-shrink:0">✓</span> Living Profile — versioned, auto-updates</li>
+      <li style="font-size:.78rem;color:rgba(255,255,255,.5);display:flex;gap:.38rem"><span style="color:var(--teal2);flex-shrink:0">✓</span> Network Intel — 847 BC CCPC benchmarks</li>
+    </ul>
+  </div>
+  <div class="needs"><div class="ntag">📸 Your action</div><p>Screenshot: <strong>Intelligence OS → Decision Log</strong> from demo. CMD+SHIFT+4 on Mac. Replace this box with: <code style="font-size:.75rem">&lt;img src="ios.png" style="width:100%;border-radius:9px;border:1px solid rgba(255,255,255,.08)"&gt;</code></p></div>
+</div></section><hr>
+<section class="sec"><div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:2.25rem;align-items:start">
+  <div class="needs"><div class="ntag">📸 Your action</div><p>Screenshot: <strong>TaxReady → Optimizer</strong> — the salary/dividend slider. Your most distinctive feature visually.</p></div>
+  <div>
+    <div class="mtag">TaxReady</div>
+    <h2 style="font-size:1.25rem">Stop guessing at your salary split</h2>
+    <p style="font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.7;margin:.65rem 0 .9rem">Optimizer calculates combined personal + corporate tax at every split — 2026 BC rates, RRSP room, CPP, RDTOH all built in. Drag the slider.</p>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:.38rem">
+      <li style="font-size:.78rem;color:rgba(255,255,255,.5);display:flex;gap:.38rem"><span style="color:var(--teal2);flex-shrink:0">✓</span> SBD gauge — alerts when clawback approaches</li>
+      <li style="font-size:.78rem;color:rgba(255,255,255,.5);display:flex;gap:.38rem"><span style="color:var(--teal2);flex-shrink:0">✓</span> Passive income clawback at $50K threshold</li>
+      <li style="font-size:.78rem;color:rgba(255,255,255,.5);display:flex;gap:.38rem"><span style="color:var(--teal2);flex-shrink:0">✓</span> Year-end checklist — 12 items before Dec 31</li>
+      <li style="font-size:.78rem;color:rgba(255,255,255,.5);display:flex;gap:.38rem"><span style="color:var(--teal2);flex-shrink:0">✓</span> CRA installment amounts from live data</li>
+    </ul>
+  </div>
+</div></section><hr>
+<section class="sec"><div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:2.25rem;align-items:start">
+  <div>
+    <div class="mtag">GrantsReady</div>
+    <h2 style="font-size:1.25rem">$412,000 in matched funding</h2>
+    <p style="font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.7;margin:.65rem 0 .9rem">529 programs matched against your live profile. Approval probability from real platform outcomes — not generic eligibility descriptions.</p>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:.38rem">
+      <li style="font-size:.78rem;color:rgba(255,255,255,.5);display:flex;gap:.38rem"><span style="color:var(--teal2);flex-shrink:0">✓</span> IRAP — 80% of R&D salary, non-repayable</li>
+      <li style="font-size:.78rem;color:rgba(255,255,255,.5);display:flex;gap:.38rem"><span style="color:var(--teal2);flex-shrink:0">✓</span> CSBFP — $300K at Prime+3%, 85% gov't guarantee</li>
+      <li style="font-size:.78rem;color:rgba(255,255,255,.5);display:flex;gap:.38rem"><span style="color:var(--teal2);flex-shrink:0">✓</span> SR&ED — 35% refundable (doubled Budget 2025)</li>
+      <li style="font-size:.78rem;color:rgba(255,255,255,.5);display:flex;gap:.38rem"><span style="color:var(--teal2);flex-shrink:0">✓</span> WorkBC — 85% wages, 24 weeks per hire</li>
+    </ul>
+  </div>
+  <div class="needs"><div class="ntag">📸 Your action</div><p>Screenshot: <strong>GrantsReady → My Matches</strong> with the $412K total visible. This is your best conversion asset.</p></div>
+</div></section>
+</div><!-- /features -->
+
+<!-- PRICING -->
+<div id="page-pricing" class="page">
+<section class="sec" style="padding-top:5rem"><div class="wrap">
+  <div class="slbl">Pricing</div>
+  <h2>Less than one hour of bookkeeping. <span class="ac">Per month.</span></h2>
+  <p class="ssub">Average client identifies $28,100 in annual savings. At $199/month, that's a 12x return year one.</p>
+  <div class="pgrid">
+    <div class="plan">
+      <div class="ptier">Starter</div><div class="pprice">$99</div><div class="pper">per month · billed annually</div>
+      <div class="ptarget">Solo operators · $500K–$1.5M</div>
+      <ul class="pfeat-list">
+        <li>CashFlow Pilot — 90-day forecast</li><li>TaxReady — SBD + optimizer</li>
+        <li>InvoiceVault — GST + receipts</li><li>Intelligence OS — Decision Log</li>
+        <li>2 bank accounts via Plaid</li>
+      </ul>
+      <button class="pcta" onclick="go('waitlist')">Join waitlist →</button>
+    </div>
+    <div class="plan pfeat">
+      <div class="pbadge">Most popular</div>
+      <div class="ptier">Growth</div><div class="pprice">$199</div><div class="pper">per month · billed annually</div>
+      <div class="ptarget">Growing SMBs · $1.5M–$5M · 3–15 staff</div>
+      <ul class="pfeat-list">
+        <li>Everything in Starter</li><li>GrantsReady — 529 matched programs</li>
+        <li>DataGaps + ROI calculator</li><li>ProfitPilot + PlanningHub</li>
+        <li>CRA My Business Account</li>
+      </ul>
+      <button class="pcta" onclick="go('waitlist')">Join waitlist →</button>
+    </div>
+    <div class="plan">
+      <div class="ptier">Pro</div><div class="pprice">$299</div><div class="pper">per month · billed annually</div>
+      <div class="ptarget">Multi-company · $3M+ · HoldCo</div>
+      <ul class="pfeat-list">
+        <li>Everything in Growth</li><li>MultiCo — up to 3 entities</li>
+        <li>SBD allocation (T2SCH23A)</li><li>HoldCo restructuring</li>
+        <li>Annual Outcomes Report</li>
+      </ul>
+      <button class="pcta" onclick="go('waitlist')">Join waitlist →</button>
+    </div>
+    <div class="plan">
+      <div class="ptier">Advisor</div><div class="pprice">$499</div><div class="pper">per month · billed annually</div>
+      <div class="ptarget">CPAs and advisors — up to 15 clients</div>
+      <ul class="pfeat-list">
+        <li>Full platform for 15 clients</li><li>White-label advisor portal</li>
+        <li>Client switching dashboard</li><li>Portfolio-level alerts</li>
+        <li>Dedicated Elevare advisor</li>
+      </ul>
+      <button class="pcta" onclick="go('waitlist')">Join waitlist →</button>
+    </div>
+  </div>
+  <div style="margin-top:1.25rem;background:rgba(14,138,125,.05);border:1px solid var(--bt);border-radius:9px;padding:1.1rem 1.4rem;text-align:center">
+    <div style="font-family:var(--mono);font-size:.67rem;color:var(--teal2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.35rem">Private beta — founding clients open</div>
+    <p style="font-size:.82rem;color:rgba(255,255,255,.45)">6 months free · your priorities drive the roadmap · <a href="#" onclick="go('waitlist')" style="color:var(--teal2)">Apply →</a></p>
+  </div>
+  <div style="margin-top:2.5rem">
+    <div class="slbl">What you're already paying for</div>
+    <h2 style="font-size:1.25rem">Elevare replaces tools costing <span class="ac">$1,000–$2,000/month</span></h2>
+    <table class="ctable">
+      <thead><tr><th>What you pay for now</th><th>Elevare Finance OS</th><th>Your current cost</th></tr></thead>
+      <tbody>
+        <tr><td>Part-time bookkeeper</td><td class="y">Replaced 60% of tasks</td><td>$400–800/mo</td></tr>
+        <tr><td>Accountant year-end prep</td><td class="y">Prep time −40–50%</td><td>$200–400/mo</td></tr>
+        <tr><td>QuickBooks Online</td><td class="pa">Integrates (keeps QBO)</td><td>$60–80/mo</td></tr>
+        <tr><td>Float cash flow</td><td class="y">Fully replaced</td><td>$80–270/mo CAD</td></tr>
+        <tr><td>Grant consultant</td><td class="y">Discovery + tracking</td><td>$300–500/app</td></tr>
+        <tr><td style="font-weight:500;color:var(--white)">Elevare Finance OS (Growth)</td><td style="color:var(--teal2);font-weight:600">$199/month</td><td style="color:var(--teal2);font-weight:600">All of the above</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div></section>
+</div><!-- /pricing -->
+
+<!-- ABOUT -->
+<div id="page-about" class="page">
+<section class="sec" style="padding-top:5rem"><div class="wrap">
+  <div class="slbl">About</div>
+  <h2>Built by an advisor who got <span class="ac">tired of the gap.</span></h2>
+  <div class="agrid">
+    <div class="aphoto"><div class="ainit">?</div><div class="anote">Add your photo here</div></div>
+    <div>
+      <div class="needs"><div class="ntag">✍️ Write in your own words</div><p>2–3 paragraphs: years advising CCPCs, the specific problem you kept seeing (SBD risk, missed grants, cash crises), why you built this. Authentic founder story converts better than polished copy.</p></div>
+      <div class="infotbl" style="margin-top:1.1rem">
+        <div class="irow"><span class="ilbl">Legal name</span><span class="ival">Elevare Global Inc.</span></div>
+        <div class="irow"><span class="ilbl">Incorporated</span><div class="needs" style="padding:.18rem .45rem;display:inline-block"><div class="ntag" style="font-size:.6rem">Add after incorporation</div></div></div>
+        <div class="irow"><span class="ilbl">Location</span><span class="ival">Surrey, BC · Canada</span></div>
+        <div class="irow"><span class="ilbl">Data hosting</span><span class="ival t">AWS Canada · ca-central-1</span></div>
+        <div class="irow"><span class="ilbl">Compliance</span><span class="ival t">PIPEDA + BC PIPA + Law 25</span></div>
+        <div class="irow"><span class="ilbl">Phone</span><span class="ival">(778) 697-4099</span></div>
+      </div>
+      <div style="margin-top:1.1rem;background:rgba(14,138,125,.05);border:1px solid var(--bt);border-radius:9px;padding:1rem 1.2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.65rem">
+        <div>
+          <div style="font-family:var(--mono);font-size:.65rem;color:var(--teal2);letter-spacing:.07em;text-transform:uppercase;margin-bottom:.28rem">Advisory services</div>
+          <p style="font-size:.8rem;color:rgba(255,255,255,.45)">Hands-on CCPC advisory: SR&ED documentation, year-end planning, HoldCo restructuring.</p>
+        </div>
+        <a href="https://elevareglobal.ca" target="_blank" class="btn bg" style="flex-shrink:0">elevareglobal.ca →</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+</div><!-- /about -->
+
+<!-- WAITLIST -->
+<div id="page-waitlist" class="page">
+<section class="sec" style="padding-top:5rem;min-height:calc(100vh - 52px - 100px);display:flex;align-items:center">
+  <div class="wrap" style="width:100%">
+    <div style="max-width:500px;margin:0 auto">
+      <div class="slbl">Private beta</div>
+      <h2>Get early access. <span class="ac">Shape what we build.</span></h2>
+      <p style="font-size:.85rem;color:rgba(255,255,255,.4);margin:.65rem 0 1.75rem;line-height:1.65">Small cohort of BC CCPCs. 6 months free. Your priorities drive the roadmap.</p>
+      <div style="background:var(--mid);border:1px solid var(--border);border-radius:11px;padding:1.6rem" id="wlform">
+        <div style="display:flex;flex-direction:column;gap:.8rem;margin-bottom:1.1rem">
+          <div><label style="font-family:var(--mono);font-size:.65rem;color:rgba(255,255,255,.28);letter-spacing:.07em;text-transform:uppercase;display:block;margin-bottom:.3rem">Your name</label>
+          <input style="width:100%;background:rgba(10,25,41,.8);border:1px solid var(--bt);border-radius:7px;padding:.56rem .85rem;color:var(--white);font-size:.85rem;font-family:var(--sans);outline:none" type="text" id="wlname" placeholder="Your name"></div>
+          <div><label style="font-family:var(--mono);font-size:.65rem;color:rgba(255,255,255,.28);letter-spacing:.07em;text-transform:uppercase;display:block;margin-bottom:.3rem">Business email</label>
+          <input style="width:100%;background:rgba(10,25,41,.8);border:1px solid var(--bt);border-radius:7px;padding:.56rem .85rem;color:var(--white);font-size:.85rem;font-family:var(--sans);outline:none" type="email" id="wlemail" placeholder="you@company.ca"></div>
+          <div><label style="font-family:var(--mono);font-size:.65rem;color:rgba(255,255,255,.28);letter-spacing:.07em;text-transform:uppercase;display:block;margin-bottom:.3rem">Your situation</label>
+          <select style="width:100%;background:rgba(10,25,41,.8);border:1px solid var(--bt);border-radius:7px;padding:.56rem .85rem;color:var(--white);font-size:.85rem;font-family:var(--sans);outline:none" id="wltype">
+            <option value="">Select</option><option>CCPC business owner</option><option>CPA / financial advisor</option><option>Multi-company owner</option><option>Other</option>
+          </select></div>
+          <div><label style="font-family:var(--mono);font-size:.65rem;color:rgba(255,255,255,.28);letter-spacing:.07em;text-transform:uppercase;display:block;margin-bottom:.3rem">Annual revenue</label>
+          <select style="width:100%;background:rgba(10,25,41,.8);border:1px solid var(--bt);border-radius:7px;padding:.56rem .85rem;color:var(--white);font-size:.85rem;font-family:var(--sans);outline:none" id="wlrev">
+            <option value="">Select range</option><option>Under $500K</option><option>$500K – $1.5M</option><option>$1.5M – $5M</option><option>$5M – $10M</option><option>$10M+</option>
+          </select></div>
+        </div>
+        <button class="btn bt" style="width:100%;padding:.65rem;font-size:.88rem" onclick="sub()">Apply for early access →</button>
+        <p style="font-family:var(--mono);font-size:.65rem;color:rgba(255,255,255,.18);text-align:center;margin-top:.8rem">No credit card. In touch within 2 business days.</p>
+      </div>
+      <div id="wlsuccess" style="display:none;text-align:center;background:var(--mid);border:1px solid var(--bt);border-radius:11px;padding:2.25rem">
+        <div style="font-size:1.4rem;margin-bottom:.65rem">✓</div>
+        <div style="font-size:1rem;font-weight:600;margin-bottom:.35rem">You're on the list.</div>
+        <p style="font-size:.82rem;color:rgba(255,255,255,.4)">We'll be in touch within 2 business days.</p>
+      </div>
+      <div style="margin-top:.875rem;display:flex;flex-direction:column;gap:.45rem">
+        <div style="display:flex;align-items:center;gap:.55rem;padding:.55rem .85rem;background:rgba(14,138,125,.04);border-radius:7px;border:1px solid var(--bt)"><span style="color:var(--teal2);font-size:.85rem">🇨🇦</span><span style="font-size:.75rem;color:rgba(255,255,255,.35)">Your financial data never leaves Canada</span></div>
+        <div style="display:flex;align-items:center;gap:.55rem;padding:.55rem .85rem;background:rgba(14,138,125,.04);border-radius:7px;border:1px solid var(--bt)"><span style="color:var(--teal2);font-size:.85rem">◉</span><span style="font-size:.75rem;color:rgba(255,255,255,.35)">Founding clients receive 6 months free — rate locked at launch</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+</div><!-- /waitlist -->
+
+<!-- PRIVACY -->
+<div id="page-privacy" class="page">
+<section class="sec" style="padding-top:5rem"><div class="wrap" style="max-width:660px">
+  <div class="slbl">Legal</div>
+  <h2>Privacy Policy</h2>
+  <div class="needs" style="margin-bottom:1.4rem"><div class="ntag">✍️ Replace with generated policy</div><p>Generate at <strong>iubenda.com</strong> or <strong>termly.io</strong> (~$29/yr). Name/email/company collected via waitlist, used only for Elevare communications, stored on AWS Canada, deletion rights under PIPEDA.</p></div>
+  <div style="font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.8;display:flex;flex-direction:column;gap:.9rem">
+    <p><strong style="color:var(--white)">Elevare Global Inc.</strong> is committed to protecting your personal information under PIPEDA and applicable provincial privacy legislation.</p>
+    <p><strong style="color:var(--white)">What we collect:</strong> Name, email, company type, revenue range from the waitlist form.</p>
+    <p><strong style="color:var(--white)">How we use it:</strong> Solely for early access communications. We do not sell or share your data.</p>
+    <p><strong style="color:var(--white)">Data hosting:</strong> All data stored on servers in Canada (AWS ca-central-1, Montreal). No cross-border transfers.</p>
+    <p><strong style="color:var(--white)">Your rights:</strong> Access, correction, or deletion: <a href="mailto:privacy@elevareglobal.ca" style="color:var(--teal2)">privacy@elevareglobal.ca</a></p>
+    <p><strong style="color:var(--white)">Contact:</strong> Elevare Global Inc. · Surrey, BC · (778) 697-4099</p>
+  </div>
+</div></section>
+</div><!-- /privacy -->
+
+<footer>
+  <div class="fin">
+    <div class="fbrand">
+      <div class="logo"><div class="lbox">E</div> Elevare Finance OS</div>
+      <p>The financial operating system for Canadian CCPCs. Cash flow, tax, grants, and multi-company planning — all connected, all Canadian.</p>
+      <p style="margin-top:.4rem;font-family:var(--mono);font-size:.65rem;color:rgba(255,255,255,.18)">Surrey, BC · (778) 697-4099</p>
+    </div>
+    <div><div class="fct">Platform</div><div class="flinks"><a href="#" onclick="go('features')">Features</a><a href="#" onclick="go('pricing')">Pricing</a><a href="https://demo.elevarefinanceos.ca" target="_blank">Live demo</a><a href="#" onclick="go('waitlist')">Join waitlist</a></div></div>
+    <div><div class="fct">Company</div><div class="flinks"><a href="#" onclick="go('about')">About</a><a href="https://elevareglobal.ca" target="_blank">Advisory services</a><a href="mailto:hello@elevarefinanceos.ca">Contact</a></div></div>
+    <div><div class="fct">Legal</div><div class="flinks"><a href="#" onclick="go('privacy')">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
+  </div>
+  <div class="fbot">
+    <span class="flegal">© 2026 Elevare Global Inc. All rights reserved.</span>
+    <span class="flegal" style="display:flex;gap:.35rem;align-items:center"><span style="color:var(--teal2)">🇨🇦</span> AWS ca-central-1 · PIPEDA compliant</span>
+  </div>
+</footer>
+
+<script>
+function go(id){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('on')});
+  var el=document.getElementById('page-'+id);
+  if(el){el.classList.add('on');window.scrollTo({top:0,behavior:'smooth'});}
+}
+function sub(){
+  var e=document.getElementById('wlemail')||document.getElementById('hero-email');
+  if(!e||!e.value.includes('@')){alert('Please enter a valid email.');return;}
+  // TODO: fetch('https://formspree.io/f/YOUR_ID',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:e.value,name:document.getElementById('wlname')?.value})});
+  var f=document.getElementById('wlform');var s=document.getElementById('wlsuccess');
+  if(f)f.style.display='none';if(s)s.style.display='block';
+  go('waitlist');
+}
+window.addEventListener('scroll',function(){
+  document.querySelector('nav').style.background=window.scrollY>8?'rgba(10,25,41,.97)':'rgba(10,25,41,.92)';
+});
+var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='none';}});},{threshold:.08});
+document.querySelectorAll('.mod,.si,.plan,.mi,.step,.df').forEach(function(el){
+  el.style.opacity='0';el.style.transform='translateY(10px)';
+  el.style.transition='opacity .38s ease,transform .38s ease';
+  obs.observe(el);
+});
+</script>
+</body>
+</html>
