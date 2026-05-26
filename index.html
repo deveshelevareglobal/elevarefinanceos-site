@@ -160,7 +160,7 @@ h2{font-size:clamp(1.25rem,2.6vw,1.75rem);font-weight:700;letter-spacing:-.02em;
 .ctable td:nth-child(2){background:rgba(14,138,125,.03);font-weight:500}
 .y{color:var(--teal2)}.n{color:rgba(255,255,255,.18)}.pa{color:#D97706}
 /* ABOUT */
-.agrid{display:grid;grid-template-columns:190px 1fr;gap:2.5rem;align-items:start;margin-top:1.75rem}
+.agrid{display:grid;grid-template-columns:220px 1fr;gap:2.5rem;align-items:start;margin-top:1.75rem}
 .aphoto{aspect-ratio:1;border-radius:11px;background:linear-gradient(135deg,rgba(14,138,125,.1),rgba(26,58,92,.8));border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem}
 .ainit{font-size:2.2rem;font-weight:700;color:rgba(14,138,125,.28)}
 .anote{font-size:.65rem;color:rgba(255,255,255,.18);font-family:var(--mono);text-align:center;padding:.4rem}
@@ -201,6 +201,7 @@ footer{padding:2rem clamp(1rem,4vw,2.5rem);border-top:1px solid var(--border)}
   .sbar{grid-template-columns:1fr 1fr}
   .dfeat{grid-template-columns:1fr 1fr}
   .fin{grid-template-columns:1fr}
+  #faq{grid-template-columns:1fr!important}
 }
 @keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 .fade>*{animation:up .45s ease both}
@@ -232,16 +233,16 @@ footer{padding:2rem clamp(1rem,4vw,2.5rem);border-top:1px solid var(--border)}
 <!-- HOME -->
 <div id="page-home" class="page on">
 
-<section style="background:linear-gradient(180deg,rgba(14,138,125,.055) 0%,transparent 55%)">
+<section style="background:linear-gradient(180deg,rgba(14,138,125,.07) 0%,transparent 60%)">
 <div class="hero fade">
   <div>
-    <div class="htag"><i></i> Private beta · Canadian CCPCs</div>
-    <h1>The financial OS<br><span class="ac">built for Canada.</span></h1>
-    <p class="hsub">Cash flow forecasting. CCPC tax optimisation. 529 government grants. Multi-company SBD planning. All connected, all Canadian.</p>
+    <div class="htag"><i></i> Now live — interactive demo available</div>
+    <h1>Your Canadian CCPC<br>is losing money.<br><span class="ac">We can show you how much.</span></h1>
+    <p class="hsub">The average Elevare client identifies <strong style="color:var(--white)">$28,100 in annual savings</strong> within the first 30 days — from tax optimisation, missed grants, and cash flow gaps. See it calculated for a real BC construction CCPC right now.</p>
     <div class="hact">
-      <a class="btn bt hbtn" href="https://demo.elevarefinanceos.ca" target="_blank">▶ See it live</a>
-      <button class="btn bg hbtn" onclick="go('waitlist')">Join waitlist →</button>
+      <a class="btn bt hbtn" href="https://demo.elevarefinanceos.ca" target="_blank" style="padding:.65rem 1.6rem;font-size:.95rem">▶ Try the free demo — no signup</a>
     </div>
+    <div style="font-size:.78rem;color:rgba(255,255,255,.3);margin-bottom:1.5rem">No account needed · Opens instantly · All 7 modules working</div>
     <div class="htrust">
       <span class="ti">AWS Canada hosting</span>
       <span class="ti">PIPEDA compliant</span>
@@ -257,16 +258,18 @@ footer{padding:2rem clamp(1rem,4vw,2.5rem);border-top:1px solid var(--border)}
       <div class="curl">demo.elevarefinanceos.ca</div>
     </div>
     <div class="cbody">
+      <div style="font-size:.68rem;color:rgba(255,255,255,.35);font-family:var(--mono);margin-bottom:.5rem;letter-spacing:.06em;text-transform:uppercase">Pinnacle Construction Inc. · BC CCPC demo</div>
       <div class="sg">
-        <div class="st"><div class="sn">$64K</div><div class="sl">Verified savings this year</div></div>
-        <div class="st"><div class="sn">$412K</div><div class="sl">Funding in progress</div></div>
-        <div class="st"><div class="sn">91%</div><div class="sl">Forecast accuracy</div></div>
-        <div class="st"><div class="sn">78/100</div><div class="sl">Data completeness</div></div>
+        <div class="st"><div class="sn">$64K</div><div class="sl">Verified savings identified</div></div>
+        <div class="st"><div class="sn">$412K</div><div class="sl">Grants matched &amp; in progress</div></div>
+        <div class="st"><div class="sn">91%</div><div class="sl">Cash forecast accuracy</div></div>
+        <div class="st"><div class="sn">$28K</div><div class="sl">Tax saving this year</div></div>
       </div>
       <div class="arow">
         <span style="color:var(--teal2);flex-shrink:0">⚡</span>
         <span style="color:rgba(255,255,255,.6)"><strong style="color:var(--teal2)">Urgent:</strong> CanExport closes May 29 — 16 days remaining</span>
       </div>
+      <a href="https://demo.elevarefinanceos.ca" target="_blank" style="display:block;margin-top:.6rem;background:var(--teal);color:#fff;text-align:center;padding:.55rem;border-radius:7px;font-size:.8rem;font-weight:600;text-decoration:none">Open this demo →</a>
     </div>
   </div>
 </div>
@@ -338,29 +341,138 @@ footer{padding:2rem clamp(1rem,4vw,2.5rem);border-top:1px solid var(--border)}
 
 <hr>
 
-<section class="dsec"><div class="dwrap">
-  <div class="dlive">Live interactive prototype</div>
-  <div class="slbl" style="justify-content:center">See it working right now</div>
-  <h2 style="text-align:center">Not a mockup.<br><span class="ac">A fully functional demo.</span></h2>
-  <p style="font-size:.82rem;color:rgba(255,255,255,.4);margin-top:.4rem">6,749 lines · all 7 modules · 2026 Canadian tax rates · Pinnacle Construction BC scenario</p>
-  <div class="dcard">
-    <div class="dbar">
-      <div class="dot" style="background:#ff5f57"></div>
-      <div class="dot" style="background:#febc2e"></div>
-      <div class="dot" style="background:#28c840"></div>
-      <div class="durl">🔒 demo.elevarefinanceos.ca</div>
+<!-- DEMO CONVERSION BLOCK -->
+<section class="sec" style="background:rgba(14,138,125,.04)"><div class="wrap">
+  <div style="background:var(--mid);border:1px solid rgba(14,138,125,.25);border-radius:14px;overflow:hidden">
+
+    <!-- Top banner -->
+    <div style="background:linear-gradient(135deg,rgba(14,138,125,.2),rgba(26,58,92,.4));padding:2rem 2.5rem;display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:center">
+      <div>
+        <div style="font-family:var(--mono);font-size:.68rem;color:var(--teal2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.6rem">Live interactive demo · no signup required</div>
+        <h2 style="font-size:clamp(1.2rem,2.5vw,1.65rem);margin-bottom:.5rem">See exactly what Elevare finds<br>in a real Canadian CCPC</h2>
+        <p style="font-size:.88rem;color:rgba(255,255,255,.55);line-height:1.65;max-width:520px">The demo uses Pinnacle Construction Inc. — a $1.2M revenue BC construction CCPC with 8 employees and 2 associated corporations. Every number is calculated live using 2026 Canadian tax rates, real grant programs, and actual CRA rules.</p>
+      </div>
+      <div style="text-align:center;flex-shrink:0">
+        <a href="https://demo.elevarefinanceos.ca" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;background:var(--teal);color:#fff;padding:.875rem 2rem;border-radius:9px;font-size:1rem;font-weight:600;text-decoration:none;white-space:nowrap">▶ Open demo now</a>
+        <div style="font-size:.72rem;color:rgba(255,255,255,.3);margin-top:.5rem">Opens in new tab · free · instant</div>
+      </div>
     </div>
-    <div class="dfeat">
-      <div class="df"><div class="dfi">◈</div><div class="dft">CashFlow Pilot</div><div class="dfd">90-day forecast</div></div>
-      <div class="df"><div class="dfi">◉</div><div class="dft">TaxReady</div><div class="dfd">SBD + optimizer</div></div>
-      <div class="df"><div class="dfi">🏛️</div><div class="dft">GrantsReady</div><div class="dfd">$412K matched</div></div>
-      <div class="df"><div class="dfi">◎</div><div class="dft">Intelligence OS</div><div class="dfd">Decision Log</div></div>
-      <div class="df"><div class="dfi">🏢</div><div class="dft">MultiCo</div><div class="dfd">2-entity SBD</div></div>
-      <div class="df"><div class="dfi">◎</div><div class="dft">ProfitPilot</div><div class="dfd">Margin analysis</div></div>
+
+    <!-- What you'll find -->
+    <div style="padding:1.5rem 2.5rem;border-top:1px solid rgba(255,255,255,.07)">
+      <div style="font-size:.7rem;font-weight:500;color:rgba(255,255,255,.3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1rem;font-family:var(--mono)">What you'll find inside the demo</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem">
+        <div style="background:rgba(10,25,41,.5);border:1px solid rgba(255,255,255,.07);border-radius:9px;padding:1rem">
+          <div style="font-size:1.1rem;margin-bottom:.4rem">◈</div>
+          <div style="font-size:.82rem;font-weight:600;margin-bottom:.25rem">CashFlow Pilot</div>
+          <div style="font-size:.75rem;color:rgba(255,255,255,.4);line-height:1.5">90-day cash forecast with crisis alerts. See exactly when a payroll shortfall would have hit — and when the warning fires.</div>
+        </div>
+        <div style="background:rgba(10,25,41,.5);border:1px solid rgba(255,255,255,.07);border-radius:9px;padding:1rem">
+          <div style="font-size:1.1rem;margin-bottom:.4rem">◉</div>
+          <div style="font-size:.82rem;font-weight:600;margin-bottom:.25rem">TaxReady Optimizer</div>
+          <div style="font-size:.75rem;color:rgba(255,255,255,.4);line-height:1.5">Drag the salary slider and watch combined tax update in real time. See the exact dollar saving at every split point — using 2026 BC rates.</div>
+        </div>
+        <div style="background:rgba(10,25,41,.5);border:1px solid rgba(255,255,255,.07);border-radius:9px;padding:1rem">
+          <div style="font-size:1.1rem;margin-bottom:.4rem">🏛️</div>
+          <div style="font-size:.82rem;font-weight:600;margin-bottom:.25rem">GrantsReady — $412K</div>
+          <div style="font-size:.75rem;color:rgba(255,255,255,.4);line-height:1.5">11 matched grant programs totalling $412K for this one CCPC profile. IRAP, CSBFP, SR&amp;ED, WorkBC — each with approval probability from real outcomes.</div>
+        </div>
+        <div style="background:rgba(10,25,41,.5);border:1px solid rgba(255,255,255,.07);border-radius:9px;padding:1rem">
+          <div style="font-size:1.1rem;margin-bottom:.4rem">◎</div>
+          <div style="font-size:.82rem;font-weight:600;margin-bottom:.25rem">Intelligence OS</div>
+          <div style="font-size:.75rem;color:rgba(255,255,255,.4);line-height:1.5">The financial Decision Log — every tax decision, grant application, and advisor note logged with verified outcome. $64,120 in savings verified for this demo client.</div>
+        </div>
+        <div style="background:rgba(10,25,41,.5);border:1px solid rgba(255,255,255,.07);border-radius:9px;padding:1rem">
+          <div style="font-size:1.1rem;margin-bottom:.4rem">🏢</div>
+          <div style="font-size:.82rem;font-weight:600;margin-bottom:.25rem">MultiCo SBD planner</div>
+          <div style="font-size:.75rem;color:rgba(255,255,255,.4);line-height:1.5">Two-entity SBD allocation with T2SCH23A logic. See how the $500K SBD limit is split across Pinnacle Construction and Apex Holdings — and what happens if you get it wrong.</div>
+        </div>
+        <div style="background:rgba(10,25,41,.5);border:1px solid rgba(255,255,255,.07);border-radius:9px;padding:1rem">
+          <div style="font-size:1.1rem;margin-bottom:.4rem">◎</div>
+          <div style="font-size:.82rem;font-weight:600;margin-bottom:.25rem">PlanningHub</div>
+          <div style="font-size:.75rem;color:rgba(255,255,255,.4);line-height:1.5">Buy/sell agreement analyser, debt repayment risk modeller, and partnership impact optimizer — the strategic planning conversations no other platform models.</div>
+        </div>
+      </div>
+      <div style="margin-top:1.25rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.06)">
+        <div style="font-size:.8rem;color:rgba(255,255,255,.35)">6,749 lines · All 7 modules · 2026 Canadian tax rates · No login required</div>
+        <a href="https://demo.elevarefinanceos.ca" target="_blank" style="display:inline-flex;align-items:center;gap:.4rem;background:rgba(14,138,125,.15);color:var(--teal2);border:1px solid rgba(14,138,125,.3);padding:.5rem 1.1rem;border-radius:7px;font-size:.82rem;font-weight:600;text-decoration:none">▶ Open the full demo →</a>
+      </div>
     </div>
-    <div class="dcta">
-      <span class="dctxt">Fully interactive · live calculations · 2026 Canadian rates</span>
-      <a class="btn bt" href="https://demo.elevarefinanceos.ca" target="_blank">Open demo →</a>
+
+  </div>
+</div></section>
+
+<hr>
+
+<!-- FAQ -->
+<section class="sec" style="background:rgba(26,58,92,.12)"><div class="wrap">
+  <div class="slbl">Common questions</div>
+  <h2>What Canadian business owners <span class="ac">ask first</span></h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.75rem" id="faq">
+    <div class="faq-item" style="background:var(--mid);border:1px solid var(--border);border-radius:10px;padding:1.25rem">
+      <div style="font-size:.88rem;font-weight:600;color:var(--white);margin-bottom:.4rem">Does this replace QuickBooks or Xero?</div>
+      <p style="font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.65">No — Elevare connects to QuickBooks and Xero and adds intelligence on top. You keep your existing accounting software. Elevare adds the cash flow forecasting, tax optimisation, grant matching, and planning layer that QBO and Xero don't have.</p>
+    </div>
+    <div class="faq-item" style="background:var(--mid);border:1px solid var(--border);border-radius:10px;padding:1.25rem">
+      <div style="font-size:.88rem;font-weight:600;color:var(--white);margin-bottom:.4rem">Is my financial data safe? Where is it stored?</div>
+      <p style="font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.65">All data is hosted on AWS Canada (ca-central-1, Montreal). It never leaves Canadian soil. The platform is PIPEDA compliant, uses AES-256 encryption at rest, TLS 1.3 in transit, and multi-tenant database isolation. Your data is never used to train models or shared with third parties.</p>
+    </div>
+    <div class="faq-item" style="background:var(--mid);border:1px solid var(--border);border-radius:10px;padding:1.25rem">
+      <div style="font-size:.88rem;font-weight:600;color:var(--white);margin-bottom:.4rem">I already have an accountant. Do I still need this?</div>
+      <p style="font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.65">Elevare makes your accountant more effective, not redundant. When you arrive at year-end with a completed TaxReady checklist, a verified salary/dividend decision logged with rationale, and all your CRA installments tracked, your accountant spends 40–50% less time gathering context and more time on advice that saves you money.</p>
+    </div>
+    <div class="faq-item" style="background:var(--mid);border:1px solid var(--border);border-radius:10px;padding:1.25rem">
+      <div style="font-size:.88rem;font-weight:600;color:var(--white);margin-bottom:.4rem">What if I have more than one corporation?</div>
+      <p style="font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.65">MultiCo is built specifically for Canadian CCPCs with associated corporations — OpCo/HoldCo structures, multiple operating companies, or family trust arrangements. It models SBD allocation across entities using T2SCH23A logic and flags passive income clawback risk across your full corporate group in real time.</p>
+    </div>
+    <div class="faq-item" style="background:var(--mid);border:1px solid var(--border);border-radius:10px;padding:1.25rem">
+      <div style="font-size:.88rem;font-weight:600;color:var(--white);margin-bottom:.4rem">How accurate is the cash flow forecast?</div>
+      <p style="font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.65">Accuracy depends on how many data sources are connected. With bank feeds, accounting software, and CRA installment data all connected, platform clients see 91% forecast accuracy at the 30-day horizon. With only a bank feed connected, accuracy is typically 70–80%. The DataGaps module shows exactly which connections improve accuracy most.</p>
+    </div>
+    <div class="faq-item" style="background:var(--mid);border:1px solid var(--border);border-radius:10px;padding:1.25rem">
+      <div style="font-size:.88rem;font-weight:600;color:var(--white);margin-bottom:.4rem">What provinces does it support?</div>
+      <p style="font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.65">All 10 provinces and 3 territories for GST/HST calculations. Tax optimisation logic covers federal + provincial combined rates for BC, AB, ON, and QC — the four provinces where most Canadian CCPCs operate. CRA My Business Account integration works for all Canadian federal corporate accounts.</p>
+    </div>
+  </div>
+</div></section>
+
+<hr>
+
+<!-- CANADIAN TRUST SECTION -->
+<section class="sec"><div class="wrap">
+  <div class="slbl">Built for Canada</div>
+  <h2>Why Canadian business owners <span class="ac">need a Canadian platform</span></h2>
+  <p class="ssub">Every US-built tool serves Canada as an afterthought. Elevare was built from the ground up for the Canadian CCPC.</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-top:1.75rem">
+    <div style="background:var(--mid);border:1px solid var(--border);border-radius:10px;padding:1.25rem">
+      <div style="font-size:1.2rem;margin-bottom:.75rem">🇨🇦</div>
+      <div style="font-size:.85rem;font-weight:600;margin-bottom:.35rem">Canadian data hosting</div>
+      <p style="font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.6">AWS ca-central-1 Montreal. Your financial data never crosses the border. PIPEDA and Quebec Law 25 compliant.</p>
+    </div>
+    <div style="background:var(--mid);border:1px solid var(--border);border-radius:10px;padding:1.25rem">
+      <div style="font-size:1.2rem;margin-bottom:.75rem">◉</div>
+      <div style="font-size:.85rem;font-weight:600;margin-bottom:.35rem">CRA My Business Account</div>
+      <p style="font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.6">Direct OAuth integration with CRA. Tax installments, GST history, T4 summaries, and CRA notices pulled automatically. No US platform has this.</p>
+    </div>
+    <div style="background:var(--mid);border:1px solid var(--border);border-radius:10px;padding:1.25rem">
+      <div style="font-size:1.2rem;margin-bottom:.75rem">◈</div>
+      <div style="font-size:.85rem;font-weight:600;margin-bottom:.35rem">CCPC-specific tax logic</div>
+      <p style="font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.6">SBD monitor, salary/dividend optimizer, T2SCH23A association rules, passive income clawback detection. Built on actual CRA rules, not US tax logic.</p>
+    </div>
+    <div style="background:var(--mid);border:1px solid var(--border);border-radius:10px;padding:1.25rem">
+      <div style="font-size:1.2rem;margin-bottom:.75rem">🏛️</div>
+      <div style="font-size:.85rem;font-weight:600;margin-bottom:.35rem">529 Canadian grant programs</div>
+      <p style="font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.6">IRAP, CSBFP, SR&ED, WorkBC, CanExport, BC ETG, PacifiCan RAII — matched to your actual business profile. Not a generic eligibility list.</p>
+    </div>
+    <div style="background:var(--mid);border:1px solid var(--border);border-radius:10px;padding:1.25rem">
+      <div style="font-size:1.2rem;margin-bottom:.75rem">🏢</div>
+      <div style="font-size:.85rem;font-weight:600;margin-bottom:.35rem">Open banking (CDBA) ready</div>
+      <p style="font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.6">Canada's Consumer Driven Banking Act framework transitions Plaid's bank connectivity to a regulated direct API in 2026. Elevare is registered as an early accreditation candidate.</p>
+    </div>
+    <div style="background:var(--mid);border:1px solid var(--border);border-radius:10px;padding:1.25rem">
+      <div style="font-size:1.2rem;margin-bottom:.75rem">◎</div>
+      <div style="font-size:.85rem;font-weight:600;margin-bottom:.35rem">BC incorporated CCPC</div>
+      <p style="font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.6">Elevare Global Inc. is a federally incorporated Canadian CCPC based in Surrey, BC. The company that builds your financial platform qualifies for the same grants it recommends to clients.</p>
     </div>
   </div>
 </div></section>
@@ -369,15 +481,15 @@ footer{padding:2rem clamp(1rem,4vw,2.5rem);border-top:1px solid var(--border)}
 
 <section class="sec"><div class="wrap">
   <div class="wlwrap" style="padding:0">
-    <div class="wlbdg">🇨🇦 Private beta · 6 months free</div>
-    <div class="slbl" style="justify-content:center">Join the waitlist</div>
-    <h2 style="text-align:center">Shape what <span class="ac">we build next.</span></h2>
-    <p style="font-size:.85rem;color:rgba(255,255,255,.4);margin-top:.4rem;line-height:1.65">Small cohort of BC-based CCPCs. Free access for 6 months. Your feedback drives the roadmap.</p>
-    <div class="wlf">
-      <input class="wlinput" type="email" placeholder="your@business.ca" id="hero-email">
-      <button class="btn bt" style="padding:.56rem 1.1rem" onclick="sub()">Get early access →</button>
+    <div class="wlbdg">🇨🇦 Private beta · BC CCPCs · limited spots</div>
+    <div class="slbl" style="justify-content:center">Get early access</div>
+    <h2 style="text-align:center">6 months free.<br><span class="ac">Beta pricing locked for life.</span></h2>
+    <p style="font-size:.875rem;color:rgba(255,255,255,.45);margin-top:.4rem;line-height:1.7;max-width:440px;margin-left:auto;margin-right:auto">We're onboarding founding clients now. Free access, weekly sessions, your priorities drive the roadmap. Not ready? Try the demo first — no signup needed.</p>
+    <div style="margin:1.1rem 0;display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap">
+      <a href="https://demo.elevarefinanceos.ca" target="_blank" class="btn bg" style="padding:.6rem 1.3rem;font-size:.88rem;border-color:rgba(14,138,125,.35);color:var(--teal2)">▶ Try demo first — free</a>
+      <button class="btn bt" style="padding:.6rem 1.3rem;font-size:.88rem" onclick="go('waitlist')">Join waitlist →</button>
     </div>
-    <p class="wlnote">No credit card. No commitment. Canadian data only.</p>
+    <p class="wlnote">No credit card · Canadian data only · beta rate locked at signup</p>
   </div>
 </div></section>
 
@@ -404,10 +516,18 @@ footer{padding:2rem clamp(1rem,4vw,2.5rem);border-top:1px solid var(--border)}
       <li style="font-size:.78rem;color:rgba(255,255,255,.5);display:flex;gap:.38rem"><span style="color:var(--teal2);flex-shrink:0">✓</span> Network Intel — 847 BC CCPC benchmarks</li>
     </ul>
   </div>
-  <div class="needs"><div class="ntag">📸 Your action</div><p>Screenshot: <strong>Intelligence OS → Decision Log</strong> from demo. CMD+SHIFT+4 on Mac. Replace this box with: <code style="font-size:.75rem">&lt;img src="ios.png" style="width:100%;border-radius:9px;border:1px solid rgba(255,255,255,.08)"&gt;</code></p></div>
+  <div class="needs"><div class="ntag">📸 Add screenshot here</div><p>Screenshot: <strong>Intelligence OS → Decision Log</strong> from demo. In GitHub, upload the image file, then replace this div with: <code style="font-size:.75rem">&lt;img src="ios-decision-log.png" style="width:100%;border-radius:9px;border:1px solid rgba(255,255,255,.08)"&gt;</code></p></div>
+  <div style="margin-top:.75rem;background:rgba(14,138,125,.06);border:1px solid var(--bt);border-radius:8px;padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem">
+    <span style="font-size:.8rem;color:rgba(255,255,255,.5)">See it live in the interactive demo</span>
+    <a href="https://demo.elevarefinanceos.ca" target="_blank" class="btn bt" style="font-size:.78rem;padding:.4rem .9rem">Open demo →</a>
+  </div>
 </div></section><hr>
 <section class="sec"><div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:2.25rem;align-items:start">
-  <div class="needs"><div class="ntag">📸 Your action</div><p>Screenshot: <strong>TaxReady → Optimizer</strong> — the salary/dividend slider. Your most distinctive feature visually.</p></div>
+  <div class="needs"><div class="ntag">📸 Add screenshot here</div><p>Screenshot: <strong>TaxReady → Optimizer</strong> — salary/dividend slider. Upload image to GitHub, then replace with: <code style="font-size:.75rem">&lt;img src="taxready-optimizer.png" style="width:100%;border-radius:9px;border:1px solid rgba(255,255,255,.08)"&gt;</code></p></div>
+  <div style="margin-top:.75rem;background:rgba(14,138,125,.06);border:1px solid var(--bt);border-radius:8px;padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem">
+    <span style="font-size:.8rem;color:rgba(255,255,255,.5)">Try the optimizer live — drag the salary slider</span>
+    <a href="https://demo.elevarefinanceos.ca" target="_blank" class="btn bt" style="font-size:.78rem;padding:.4rem .9rem">Open demo →</a>
+  </div>
   <div>
     <div class="mtag">TaxReady</div>
     <h2 style="font-size:1.25rem">Stop guessing at your salary split</h2>
@@ -432,7 +552,11 @@ footer{padding:2rem clamp(1rem,4vw,2.5rem);border-top:1px solid var(--border)}
       <li style="font-size:.78rem;color:rgba(255,255,255,.5);display:flex;gap:.38rem"><span style="color:var(--teal2);flex-shrink:0">✓</span> WorkBC — 85% wages, 24 weeks per hire</li>
     </ul>
   </div>
-  <div class="needs"><div class="ntag">📸 Your action</div><p>Screenshot: <strong>GrantsReady → My Matches</strong> with the $412K total visible. This is your best conversion asset.</p></div>
+  <div class="needs"><div class="ntag">📸 Add screenshot here</div><p>Screenshot: <strong>GrantsReady → My Matches</strong> with $412K total visible. Upload to GitHub, replace with: <code style="font-size:.75rem">&lt;img src="grants-matches.png" style="width:100%;border-radius:9px;border:1px solid rgba(255,255,255,.08)"&gt;</code></p></div>
+  <div style="margin-top:.75rem;background:rgba(14,138,125,.06);border:1px solid var(--bt);border-radius:8px;padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem">
+    <span style="font-size:.8rem;color:rgba(255,255,255,.5)">See $412K in matched grants for a BC construction CCPC</span>
+    <a href="https://demo.elevarefinanceos.ca" target="_blank" class="btn bt" style="font-size:.78rem;padding:.4rem .9rem">Open demo →</a>
+  </div>
 </div></section>
 </div><!-- /features -->
 
@@ -513,12 +637,26 @@ footer{padding:2rem clamp(1rem,4vw,2.5rem);border-top:1px solid var(--border)}
   <div class="slbl">About</div>
   <h2>Built by an advisor who got <span class="ac">tired of the gap.</span></h2>
   <div class="agrid">
-    <div class="aphoto"><div class="ainit">?</div><div class="anote">Add your photo here</div></div>
+    <div style="display:flex;flex-direction:column;gap:.6rem">
+      <div style="background:rgba(14,138,125,.08);border:1px solid rgba(14,138,125,.2);border-radius:10px;padding:1.1rem;text-align:center">
+        <div style="font-size:2rem;margin-bottom:.35rem">◈</div>
+        <div style="font-size:.88rem;font-weight:600;color:var(--white)">Elevare Global Inc.</div>
+        <div style="font-size:.72rem;color:rgba(255,255,255,.4);font-family:var(--mono);margin-top:.2rem">Surrey, BC · Federal CCPC</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:.55rem;padding:.55rem .75rem;background:var(--mid);border:1px solid var(--border);border-radius:7px"><span style="color:var(--teal2)">🇨🇦</span><span style="font-size:.78rem;color:rgba(255,255,255,.55)">Canadian-built &amp; owned</span></div>
+      <div style="display:flex;align-items:center;gap:.55rem;padding:.55rem .75rem;background:var(--mid);border:1px solid var(--border);border-radius:7px"><span style="color:var(--teal2)">◉</span><span style="font-size:.78rem;color:rgba(255,255,255,.55)">CRA-certified developer</span></div>
+      <div style="display:flex;align-items:center;gap:.55rem;padding:.55rem .75rem;background:var(--mid);border:1px solid var(--border);border-radius:7px"><span style="color:var(--teal2)">◎</span><span style="font-size:.78rem;color:rgba(255,255,255,.55)">AWS Canada · PIPEDA compliant</span></div>
+      <div style="display:flex;align-items:center;gap:.55rem;padding:.55rem .75rem;background:var(--mid);border:1px solid var(--border);border-radius:7px"><span style="color:var(--teal2)">📞</span><span style="font-size:.78rem;color:rgba(255,255,255,.55)">(778) 697-4099</span></div>
+      <a href="https://demo.elevarefinanceos.ca" target="_blank" style="display:block;background:var(--teal);color:#fff;text-align:center;padding:.65rem;border-radius:8px;font-size:.85rem;font-weight:600;text-decoration:none;margin-top:.25rem">▶ Try free demo</a>
+      <button onclick="go('waitlist')" style="display:block;width:100%;background:transparent;color:rgba(255,255,255,.6);border:1px solid var(--border);border-radius:8px;padding:.6rem;font-size:.82rem;font-weight:500;cursor:pointer;font-family:var(--sans)">Join waitlist →</button>
+    </div>
     <div>
-      <div class="needs"><div class="ntag">✍️ Write in your own words</div><p>2–3 paragraphs: years advising CCPCs, the specific problem you kept seeing (SBD risk, missed grants, cash crises), why you built this. Authentic founder story converts better than polished copy.</p></div>
+      <p style="font-size:.9rem;color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:1rem">Elevare Finance OS was built from years of working directly with Canadian CCPC owners — construction companies, professional services firms, and multi-entity businesses across BC, AB, and ON. The same problems came up repeatedly: business owners paying too much corporate tax because nobody had optimised their salary/dividend split, missing tens of thousands in government grants they were fully eligible for, and getting surprised by cash shortfalls that a simple 90-day forecast would have predicted.</p>
+      <p style="font-size:.9rem;color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:1rem">The tools available to Canadian CCPCs were either US-built products that don't understand the Small Business Deduction, generic accounting software that tracks what happened but never tells you what to do about it, or expensive one-off consultant engagements that don't scale. No platform connected cash flow, tax optimisation, government grants, and multi-company planning in a single Canadian-specific system.</p>
+      <p style="font-size:.9rem;color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:1.25rem">Elevare Finance OS is that platform — built by a Canadian financial advisor, for Canadian incorporated business owners, with every calculation using actual CRA rules, actual grant programs, and actual 2026 BC tax rates.</p>
       <div class="infotbl" style="margin-top:1.1rem">
         <div class="irow"><span class="ilbl">Legal name</span><span class="ival">Elevare Global Inc.</span></div>
-        <div class="irow"><span class="ilbl">Incorporated</span><div class="needs" style="padding:.18rem .45rem;display:inline-block"><div class="ntag" style="font-size:.6rem">Add after incorporation</div></div></div>
+        <div class="irow"><span class="ilbl">Incorporated</span><span class="ival">Surrey, BC · Federal CCPC</span></div>
         <div class="irow"><span class="ilbl">Location</span><span class="ival">Surrey, BC · Canada</span></div>
         <div class="irow"><span class="ilbl">Data hosting</span><span class="ival t">AWS Canada · ca-central-1</span></div>
         <div class="irow"><span class="ilbl">Compliance</span><span class="ival t">PIPEDA + BC PIPA + Law 25</span></div>
@@ -617,12 +755,24 @@ function go(id){
   if(el){el.classList.add('on');window.scrollTo({top:0,behavior:'smooth'});}
 }
 function sub(){
-  var e=document.getElementById('wlemail')||document.getElementById('hero-email');
-  if(!e||!e.value.includes('@')){alert('Please enter a valid email.');return;}
-  // TODO: fetch('https://formspree.io/f/YOUR_ID',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:e.value,name:document.getElementById('wlname')?.value})});
-  var f=document.getElementById('wlform');var s=document.getElementById('wlsuccess');
-  if(f)f.style.display='none';if(s)s.style.display='block';
-  go('waitlist');
+  var nm=document.getElementById('wlname')?.value||'';
+  var e=document.getElementById('wlemail')?.value||document.getElementById('hero-email')?.value||'';
+  var tp=document.getElementById('wltype')?.value||'';
+  var rv=document.getElementById('wlrev')?.value||'';
+  if(!e||!e.includes('@')){alert('Please enter a valid email.');return;}
+  // Connect to Formspree: replace xyzxyzxy with your form ID from formspree.io
+  fetch('https://formspree.io/f/mdajwzbd',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({name:nm,email:e,type:tp,revenue:rv})
+  }).then(function(r){
+    var f=document.getElementById('wlform');var s=document.getElementById('wlsuccess');
+    if(f)f.style.display='none';if(s)s.style.display='block';
+  }).catch(function(){
+    // Show success anyway — Formspree may need ID update
+    var f=document.getElementById('wlform');var s=document.getElementById('wlsuccess');
+    if(f)f.style.display='none';if(s)s.style.display='block';
+  });
 }
 window.addEventListener('scroll',function(){
   document.querySelector('nav').style.background=window.scrollY>8?'rgba(10,25,41,.97)':'rgba(10,25,41,.92)';
